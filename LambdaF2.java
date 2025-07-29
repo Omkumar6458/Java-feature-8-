@@ -62,15 +62,37 @@ public class LambdaF2 {
 
  //  Y4 y = ()-> m1(); // here we not appply parantheisis : so it act like return type , so as Y4 is  Int return type. CAUSE ERROR
 
-    Y4 i = () -> m2(4);
+    Y4 i = () -> m2();
     System.out.println(i);
-    
+
+     Y4 k = () -> {return m2();};   // take form static 
+     System.out.println(k.m1());   // for output give to interface 
+
+
+
+
+     Y4 L = () -> 7+9; // store 
+     System.out.println(L.m1()); // give output  :: if if return like : () -> {5+5}; // cause error 
+
+       
+
+
+     Y a1 = () -> m1();
+     Y b1 = () -> m2();  // it is also compile ? ! ::  (IF METHOD IS VOID THEN ALLOW NON VOID )
+     
+     //  Y c1 = () -> 5;                          not allow  (IN VOID INTERFACE)
+         
+         Y4 d1 =  () -> 10;  // Allow in non void interface 
+         Y4 d2  = () ->'a';  // ALLOW SAME TYPE OR LESSER 
+         Y4 d3 = () -> (int)8.0; // allow by casting 
+
+         
+
 
 
 
 
   }
-
 
 
   static void m1()
@@ -78,7 +100,7 @@ public class LambdaF2 {
    
   }
 
- static int m2(int x)  // parameter diffrent : and return type diffrent 
+ static int m2( )  // parameter diffrent : and return type diffrent 
   {
     return 10;
   }
