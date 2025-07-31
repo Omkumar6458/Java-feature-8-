@@ -1,8 +1,13 @@
 package StreamAPI;
+import java.io.FileReader;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.InputStreamReader;
+import java.io.IOException;
 
 public class Practice1 {
   public static void main(String[] args) {
@@ -38,6 +43,60 @@ public class Practice1 {
 
    stream3.forEach(System.out :: println);
    System.out.println(  );
+
+
+//************************************************ */
+
+  System.out.println("***************use list ***********************");
+
+
+  List<Integer> list = List.of(2,3,4,5,6,7,8,9);
+
+  Stream<Integer> stream4 = list.stream();
+  stream4.forEach(System.out ::println );
+
+
+//************************************************************** */
+
+  
+
+
+
+System.out.println("***************use buffer /********************");
+ try{
+ BufferedReader br = new BufferedReader(new FileReader ("abc.txt"));
+
+Stream<String> stream5 = br.lines();
+stream5.forEach(System.out :: println);
+
+System.out.println();
+ }
+ catch(Exception e)
+ {
+  System.out.println("not found ");
+ }
+
+
+
+//***************************************** */
+
+
+
+Stream<Integer> str6 = list.stream();
+Stream<Integer> stream7 = str6.filter(ele -> ele%2 ==0);
+stream7.forEach(System.out :: println);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
